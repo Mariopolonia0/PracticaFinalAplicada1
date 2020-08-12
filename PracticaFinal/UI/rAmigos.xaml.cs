@@ -27,9 +27,6 @@ namespace PracticaFinal.UI
             AmigoIdTextBox.Text = "0";
             this.amigo.AmigoId = 1;
             amigo.FechaNacimiento = DateTime.Now;
-            /*SexoComboBox.ItemsSource = ClientesBLL.GetClientes();
-            SexoComboBox.SelectedValuePath = "Clientes";
-            SexoComboBox.DisplayMemberPath = "Sexo";*/
         }
 
         private void Limpiar()
@@ -39,8 +36,6 @@ namespace PracticaFinal.UI
             DireccionTextBox.Text = string.Empty;
             CelularTextBox.Text = string.Empty;
             EmailTextBox.Text = string.Empty;
-            //FechaDatePicker.SelectedDate = DateTime.Now;
-
         }
 
         private bool Validar()
