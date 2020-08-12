@@ -22,6 +22,24 @@
                         </MenuItem.Icon>
                     </MenuItem>
 
+                    <MenuItem x:Name="rEntradaMenuItem" Header="Entrada" Click="rEntradaMenuItem_Click"  >
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/Nuevo.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <MenuItem x:Name="rJuegosMenuItem" Header="Juegos" Click="rJuegosMenuItem_Click"   >
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/Nuevo.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <MenuItem x:Name="rPrestamoMenuItem" Header="Prestamo" Click="rPrestamoMenuItem_Click"   >
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/Nuevo.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
                 </MenuItem>
 
                 <!--Consultas-->

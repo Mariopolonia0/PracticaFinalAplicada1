@@ -31,5 +31,23 @@ namespace PracticaFinal
             rAmigos amigos = new rAmigos();
             amigos.Show();
         }
+
+        private void rEntradaMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rEntradas entrada = new rEntradas();
+            entrada.Show();
+        }
+
+        private void rJuegosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rJuegos juegos = new rJuegos();
+            juegos.Show();
+        }
+
+        private void rPrestamoMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rPrestamos prestamos = new rPrestamos();
+            prestamos.Show();
+        }
     }
 }

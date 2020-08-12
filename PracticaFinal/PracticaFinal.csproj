@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\agregar.png" />
     <None Remove="Resources\Buscar.png" />
     <None Remove="Resources\Cancelar.jfif" />
     <None Remove="Resources\Guardar.png" />
@@ -23,6 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\agregar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Buscar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
