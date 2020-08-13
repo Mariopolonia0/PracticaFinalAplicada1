@@ -26,21 +26,21 @@
             <DatePicker x:Name="FechaDatePicker" SelectedDate="{Binding Fecha,StringFormat=dd/MM/yyyy}"  />
         </StackPanel>
 
-        <StackPanel Orientation="Vertical" >
+        <StackPanel Orientation="Horizontal" >
             <Label Content="Amigo Id" />
-            <TextBox Name="AmigoIdTextBox" Text="{Binding AmigoId}"   />
+            <Label Content="Nombre " Margin="150,0,0,0"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" >
-            <Label Content="Observacion" />
-            <Label Content="Cantidad Juegos" Margin="465,0,0,0" />
-  
-        </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <TextBox Name="ObservacionTextbox" Width="491"   />
-            <TextBox x:Name="CantidadJuegosTextBox"  Margin="55,0,0,0" Width="95"/>
-           
+            <ComboBox Name="AmigoIdComboBox" Width="72" DropDownClosed="AmigoIdComboBox_DropDownClosed"   />
+            <Label Name="AmigoNombreLabel" Content="{Binding Nombre}" Margin="140,0,0,0" Width="198"   />
         </StackPanel>
+
+        <StackPanel Orientation="Vertical" Height="48" >
+            <Label Content="Observacion" />
+            <TextBox Name="ObservacionTextbox" />
+        </StackPanel>
+
 
         <GroupBox Header="Orden Detalle" BorderBrush="#FF414649" Height="288"   >
             <StackPanel Orientation="Vertical">
@@ -52,11 +52,11 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal"  >
-                    <ComboBox x:Name="JuegoIdComboBox" Width="81"  Margin="5,0,0,0" Text="{Binding JuegoId}" DropDownClosed="JuegoIdComboBox_DropDownClosed"   />
+                    <ComboBox x:Name="JuegoIdComboBox" Width="81"  Margin="5,0,0,0"   DropDownClosed="JuegoIdComboBox_DropDownClosed"   />
                     <Label x:Name="DescripcionJuegoLabel"  Width="257"  Margin="30,0,0,0"  />
                     <TextBox x:Name="CantidadTextBox" Width="74" Margin="33,0,0,0" Text="{Binding Cantidad}"  />
 
-                    <Button Name="AgregarButton" Width="88" Height="23" Margin="60,0,5,0"  >
+                    <Button Name="AgregarButton" Width="88" Height="23" Margin="60,0,5,0" Click="AgregarButton_Click"  >
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Resources/agregar.png" />
                             <Label Content="Agregar" Margin="4,0" Padding="-1"/>
@@ -72,14 +72,12 @@
                     </Button>
                 </StackPanel>
 
-                <DataGrid x:Name="DetalleDataGrid" AlternatingRowBackground="#FFBAE3FF" AutoGenerateColumns="False" ItemsSource="{Binding VentaDetalle}" Margin="0,5,0,0" Width="776"  Height="203">
+                <DataGrid x:Name="DetalleDataGrid" AlternatingRowBackground="#FFBAE3FF" AutoGenerateColumns="False" ItemsSource="{Binding PrestamoDetalle}" Margin="0,5,0,0" Width="776"  Height="203">
 
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Producto Id"  Binding="{Binding ProductoId}"/>
+                        <DataGridTextColumn Header="Juegos Id"  Binding="{Binding JuegosId}"/>
+                        <DataGridTextColumn Header="Descripcion"  Binding="{Binding Descripcion}"/>
                         <DataGridTextColumn Header="Cantidad"  Binding="{Binding Cantidad}"/>
-                        <DataGridTextColumn Header="Descripción"  Binding="{Binding Descripcion}"/>
-                        <DataGridTextColumn Header="Precio"  Binding="{Binding Precio}"/>
-                        <DataGridTextColumn Header="Costo"  Binding="{Binding Costo}"/>
                     </DataGrid.Columns>
                 </DataGrid>
 

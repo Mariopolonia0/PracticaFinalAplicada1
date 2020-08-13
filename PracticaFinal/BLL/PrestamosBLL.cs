@@ -163,5 +163,30 @@ namespace PracticaFinal.BLL
             }
             return lista;
         }
+
+        public static bool ModificarDetalle(Prestamos prestamo)
+        {
+            Contexto contexto = new Contexto();
+            bool paso = false;
+
+            try
+            {
+                foreach (var item in prestamo.PrestamoDetalle)
+                {
+                    Juegos juegos = JuegosBLL.Buscar(Convert.ToInt32(item.JuegoId)); ;
+                    juegos.Existencia -= item.Cantidad;
+                    JuegosBLL.Modificar(juegos);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return paso;
+        }
     }
 }

@@ -164,5 +164,29 @@ namespace PracticaFinal.BLL
             }
             return lista;
         }
+
+        public static List<Amigos> GetAmigos()
+        {
+            Contexto contexto = new Contexto();
+            List<Amigos> amigos = new List<Amigos>();
+
+            try
+            {
+                amigos = contexto.Amigos.ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return amigos;
+        }
+
+
     }
 }

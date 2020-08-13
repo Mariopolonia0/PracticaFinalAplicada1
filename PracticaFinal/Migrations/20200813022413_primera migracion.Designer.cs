@@ -9,8 +9,8 @@ using PracticaFinal.DAL;
 namespace PracticaFinal.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200812014253_migracion-inicial")]
-    partial class migracioninicial
+    [Migration("20200813022413_primera migracion")]
+    partial class primeramigracion
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -118,6 +118,9 @@ namespace PracticaFinal.Migrations
 
                     b.Property<int>("Cantidad")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("Descripcion")
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("JuegoId")
                         .HasColumnType("INTEGER");

@@ -58,7 +58,7 @@ namespace PracticaFinal.BLL
         }
 
         //Metodo Modificar.
-        private static bool Modificar(Juegos juegos)
+        public static bool Modificar(Juegos juegos)
         {
             bool key = false;
             Contexto contexto = new Contexto();

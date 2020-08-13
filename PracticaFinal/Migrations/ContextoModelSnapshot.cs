@@ -117,6 +117,9 @@ namespace PracticaFinal.Migrations
                     b.Property<int>("Cantidad")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Descripcion")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("JuegoId")
                         .HasColumnType("INTEGER");
 

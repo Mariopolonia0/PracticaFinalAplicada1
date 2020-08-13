@@ -27,6 +27,25 @@ namespace PracticaFinal.Entidades
         public int PrestamoId { get; set; }
         public int JuegoId { get; set; }
         public int Cantidad { get; set; }
+        public string Descripcion { get; set; }
+
+        public PrestamosDetalle()
+        {
+            this.Id = 0;
+            this.PrestamoId = 0;
+            this.JuegoId = 0;
+            this.Cantidad = 0;
+            this.Descripcion = "";
+        }
+
+        public PrestamosDetalle(int prestamoid, int juegosid, int cantidad, string descripcion)
+        {
+            this.Id = prestamoid;
+            this.PrestamoId = prestamoid;
+            this.JuegoId = juegosid;
+            this.Cantidad = cantidad;
+            this.Descripcion = descripcion;
+        }
     }
 }
 //Prestamos (PrestamoId,Fecha,AmigoId, Observacion, CantidadJuegos)

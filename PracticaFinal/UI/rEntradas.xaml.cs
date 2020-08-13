@@ -51,17 +51,17 @@ namespace PracticaFinal.UI
                 EntradaIdTextBox.Focus();
                 GuardarButton.IsEnabled = true;
             }
-/*
-            if (NombresTextBox.Text.Length == 0)
+
+            if (JuegoIdTextBox.Text.Length == 0 | Convert.ToInt32(JuegoIdTextBox.Text) == 0)
             {
                 esValido = false;
                 GuardarButton.IsEnabled = false;
                 MessageBox.Show("Descripcion está vacio", "Fallo",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
-                NombresTextBox.Focus();
+                JuegoIdTextBox.Focus();
                 GuardarButton.IsEnabled = true;
             }
-
+            /*
             if (DireccionTextBox.Text.Length == 0)
             {
                 esValido = false;
@@ -146,6 +146,10 @@ namespace PracticaFinal.UI
         {
             if (!Validar())
                 return;
+
+            Juegos juegos = JuegosBLL.Buscar(Convert.ToInt32(JuegoIdTextBox.Text)); ;
+            juegos.Existencia += entrada.Cantidad;
+            JuegosBLL.Modificar(juegos);
 
             var paso = EntradasBLL.Guardar(entrada);
 

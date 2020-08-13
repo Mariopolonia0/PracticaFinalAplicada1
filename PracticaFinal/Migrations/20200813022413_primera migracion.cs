@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PracticaFinal.Migrations
 {
-    public partial class migracioninicial : Migration
+    public partial class primeramigracion : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -79,7 +79,8 @@ namespace PracticaFinal.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     PrestamoId = table.Column<int>(nullable: false),
                     JuegoId = table.Column<int>(nullable: false),
-                    Cantidad = table.Column<int>(nullable: false)
+                    Cantidad = table.Column<int>(nullable: false),
+                    Descripcion = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
