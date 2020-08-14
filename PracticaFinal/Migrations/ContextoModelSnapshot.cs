@@ -108,7 +108,7 @@ namespace PracticaFinal.Migrations
                     b.ToTable("Prestamos");
                 });
 
-            modelBuilder.Entity("PracticaFinal.Entidades.PrestamosDetalle", b =>
+            modelBuilder.Entity("PracticaFinal.Entidades.PrestamosDetalles", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -130,10 +130,10 @@ namespace PracticaFinal.Migrations
 
                     b.HasIndex("PrestamoId");
 
-                    b.ToTable("PrestamosDetalle");
+                    b.ToTable("PrestamosDetalles");
                 });
 
-            modelBuilder.Entity("PracticaFinal.Entidades.PrestamosDetalle", b =>
+            modelBuilder.Entity("PracticaFinal.Entidades.PrestamosDetalles", b =>
                 {
                     b.HasOne("PracticaFinal.Entidades.Prestamos", null)
                         .WithMany("PrestamoDetalle")

@@ -14,6 +14,13 @@ namespace PracticaFinal.Entidades
         public double Precio { get; set; }
         public int Existencia { get; set; }
 
-        //Juegos (JuegoId,FechaCompra,Descripcion,Precio, Existencia)
+        public Juegos()
+        {
+            JuegoId = 0;
+            FechaCompra = DateTime.Now;
+            Descripcion = string.Empty;
+            Precio = 0;
+            Existencia = 0;
+        } 
     }
 }

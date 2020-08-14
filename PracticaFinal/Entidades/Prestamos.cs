@@ -16,37 +16,16 @@ namespace PracticaFinal.Entidades
         public int CantidadJuegos { get; set; }
 
         [ForeignKey("PrestamoId")]
-        public virtual List<PrestamosDetalle> PrestamoDetalle { get; set; }
+        public virtual List<PrestamosDetalles> PrestamoDetalle { get; set; }
 
-    }
-
-    public class PrestamosDetalle
-    {
-        [Key]
-        public int Id { get; set; }
-        public int PrestamoId { get; set; }
-        public int JuegoId { get; set; }
-        public int Cantidad { get; set; }
-        public string Descripcion { get; set; }
-
-        public PrestamosDetalle()
+        public Prestamos()
         {
-            this.Id = 0;
-            this.PrestamoId = 0;
-            this.JuegoId = 0;
-            this.Cantidad = 0;
-            this.Descripcion = "";
-        }
-
-        public PrestamosDetalle(int prestamoid, int juegosid, int cantidad, string descripcion)
-        {
-            this.Id = prestamoid;
-            this.PrestamoId = prestamoid;
-            this.JuegoId = juegosid;
-            this.Cantidad = cantidad;
-            this.Descripcion = descripcion;
+            PrestamoId = 0;
+            Fecha = DateTime.Now;
+            AmigoId = 0;
+            Observacion = string.Empty;
+            CantidadJuegos = 0;
+            PrestamoDetalle = new List<PrestamosDetalles>();
         }
     }
 }
-//Prestamos (PrestamoId,Fecha,AmigoId, Observacion, CantidadJuegos)
-//PrestamosDetalle(Id, PrestamoId, JuegoId, Cantidad)

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PracticaFinal.Migrations
 {
-    public partial class primeramigracion : Migration
+    public partial class primeramigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -72,7 +72,7 @@ namespace PracticaFinal.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PrestamosDetalle",
+                name: "PrestamosDetalles",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -84,9 +84,9 @@ namespace PracticaFinal.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PrestamosDetalle", x => x.Id);
+                    table.PrimaryKey("PK_PrestamosDetalles", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_PrestamosDetalle_Prestamos_PrestamoId",
+                        name: "FK_PrestamosDetalles_Prestamos_PrestamoId",
                         column: x => x.PrestamoId,
                         principalTable: "Prestamos",
                         principalColumn: "PrestamoId",
@@ -94,8 +94,8 @@ namespace PracticaFinal.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_PrestamosDetalle_PrestamoId",
-                table: "PrestamosDetalle",
+                name: "IX_PrestamosDetalles_PrestamoId",
+                table: "PrestamosDetalles",
                 column: "PrestamoId");
         }
 
@@ -111,7 +111,7 @@ namespace PracticaFinal.Migrations
                 name: "Juegos");
 
             migrationBuilder.DropTable(
-                name: "PrestamosDetalle");
+                name: "PrestamosDetalles");
 
             migrationBuilder.DropTable(
                 name: "Prestamos");

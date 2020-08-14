@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Windows;
 
 namespace PracticaFinal.BLL
 {
@@ -163,17 +164,19 @@ namespace PracticaFinal.BLL
             }
             return lista;
         }
-
+        //el modificar detalle es para editar la existencia para restar los juegos epretado
         public static bool ModificarDetalle(Prestamos prestamo)
         {
             Contexto contexto = new Contexto();
             bool paso = false;
 
             try
-            {
+            {   //en este parte del codigo recorro la lista del datalle
+                //y luegos busco el id del juego que agregue y modifico la
+                //existencia y luego llamo la bll de jueogo y lo guardo
                 foreach (var item in prestamo.PrestamoDetalle)
                 {
-                    Juegos juegos = JuegosBLL.Buscar(Convert.ToInt32(item.JuegoId)); ;
+                    Juegos juegos = JuegosBLL.Buscar(item.JuegoId);
                     juegos.Existencia -= item.Cantidad;
                     JuegosBLL.Modificar(juegos);
                 }

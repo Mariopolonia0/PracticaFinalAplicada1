@@ -12,5 +12,13 @@ namespace PracticaFinal.Entidades
         public DateTime Fecha { get; set; }
         public int JuegoId { get; set; }
         public int Cantidad { get; set; }
+
+        public Entradas()
+        {
+            EntradaId = 0;
+            Fecha = DateTime.Now;
+            JuegoId = 0;
+            Cantidad = 0;
+        }
     }
 }

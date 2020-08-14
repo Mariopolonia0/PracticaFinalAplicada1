@@ -9,8 +9,8 @@ using PracticaFinal.DAL;
 namespace PracticaFinal.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200813022413_primera migracion")]
-    partial class primeramigracion
+    [Migration("20200814004950_primera migration")]
+    partial class primeramigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -110,7 +110,7 @@ namespace PracticaFinal.Migrations
                     b.ToTable("Prestamos");
                 });
 
-            modelBuilder.Entity("PracticaFinal.Entidades.PrestamosDetalle", b =>
+            modelBuilder.Entity("PracticaFinal.Entidades.PrestamosDetalles", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -132,10 +132,10 @@ namespace PracticaFinal.Migrations
 
                     b.HasIndex("PrestamoId");
 
-                    b.ToTable("PrestamosDetalle");
+                    b.ToTable("PrestamosDetalles");
                 });
 
-            modelBuilder.Entity("PracticaFinal.Entidades.PrestamosDetalle", b =>
+            modelBuilder.Entity("PracticaFinal.Entidades.PrestamosDetalles", b =>
                 {
                     b.HasOne("PracticaFinal.Entidades.Prestamos", null)
                         .WithMany("PrestamoDetalle")

@@ -73,7 +73,7 @@ namespace PracticaFinal.UI
                 GuardarButton.IsEnabled = true;
             }
 
-            if (ObservacionTextbox.Text.Length == 0)
+            if (ObservacionTextbox.Text.Length == 0 )
             {
                 esValido = false;
                 GuardarButton.IsEnabled = false;
@@ -83,6 +83,15 @@ namespace PracticaFinal.UI
                 GuardarButton.IsEnabled = true;
             }
 
+            if (CantidadTextBox.Text.Length == 0 || Convert.ToInt32(CantidadTextBox.Text) == 0)
+            {
+                esValido = false;
+                GuardarButton.IsEnabled = false;
+                MessageBox.Show("Observacion está vacio", "Fallo",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                CantidadTextBox.Focus();
+                GuardarButton.IsEnabled = true;
+            }
 
             return esValido;
         }
@@ -93,10 +102,8 @@ namespace PracticaFinal.UI
             if (!Validar())
                 return;
 
-            Juegos juegos = JuegosBLL.Buscar(Convert.ToInt32(JuegoIdComboBox.SelectedIndex)); ;
-            juegos.Existencia -= prestamo.AmigoId;
-            JuegosBLL.Modificar(juegos);
 
+            PrestamosBLL.ModificarDetalle(prestamo);
             var paso = PrestamosBLL.Guardar(prestamo);
 
             if (paso)
@@ -151,6 +158,9 @@ namespace PracticaFinal.UI
             Juegos juego = JuegosBLL.Buscar(Convert.ToInt32(JuegoIdComboBox.SelectedValue));
             if (juego == null)
                 return;
+
+            prestamo.CantidadJuegos = juego.Existencia  ;
+            Cantidaddisponible.Content = prestamo.CantidadJuegos.ToString();
             DescripcionJuegoLabel.Content = juego.Descripcion;
         }
 
@@ -160,14 +170,14 @@ namespace PracticaFinal.UI
                 return;
 
             Juegos juego = JuegosBLL.Buscar(Convert.ToInt32(JuegoIdComboBox.SelectedValue));
-            
+
             if (juego == null)
             {
                 MessageBox.Show("no se encotro bueno!");
                 return;
             }
 
-            prestamo.PrestamoDetalle.Add(new PrestamosDetalle( Convert.ToInt32(PrestamoIdTextBox.Text), Convert.ToInt32(JuegoIdComboBox.SelectedValue), Convert.ToInt32(CantidadTextBox.Text),juego.Descripcion));
+            prestamo.PrestamoDetalle.Add(new PrestamosDetalles(prestamo.PrestamoId,juego.JuegoId,Convert.ToInt32(CantidadTextBox.Text),juego.Descripcion));
             Cargar();
 
         }

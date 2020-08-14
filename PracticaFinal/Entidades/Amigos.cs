@@ -14,7 +14,16 @@ namespace PracticaFinal.Entidades
         public string Celular { get; set; }
         public string Email { get; set; }
         public DateTime FechaNacimiento { get; set; }
-        //AmigoId, Nombres , Direccion,Telefono, Celular, Email,FechaNacimiento)
 
+        public Amigos()
+        {
+            AmigoId = 0;
+            Nombre = string.Empty; 
+            Direccion = string.Empty;
+            Celular = string.Empty;
+            Celular = string.Empty;
+            Email = string.Empty;
+            FechaNacimiento = DateTime.UtcNow;
+        }
     }
 }

@@ -46,17 +46,19 @@
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal" >
                     <Label Content="Juego ID" FontSize="14" Margin="0,0,0,0"/>
-                    <Label Content="Descripcion" FontSize="14" Margin="50,0,0,0"/>
-                    <Label Content="Cantidad" FontSize="14" Margin="205,0,0,0"/>
-                   
+                    <Label Content="Descripcion" FontSize="14" Margin="30,0,0,0"/>
+                    <Label Content="Cantidad Disponible" FontSize="14" Margin="140,0,0,0"/>
+                    <Label Content="Cantidad" FontSize="14" Margin="35,0,0,0"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal"  >
                     <ComboBox x:Name="JuegoIdComboBox" Width="81"  Margin="5,0,0,0"   DropDownClosed="JuegoIdComboBox_DropDownClosed"   />
-                    <Label x:Name="DescripcionJuegoLabel"  Width="257"  Margin="30,0,0,0"  />
-                    <TextBox x:Name="CantidadTextBox" Width="74" Margin="33,0,0,0" Text="{Binding Cantidad}"  />
+                    <Label x:Name="DescripcionJuegoLabel"  Width="210"  Margin="15,0,0,0" Content="{Binding Descripcion}" />
+                    <Label x:Name="Cantidaddisponible" Target="{Binding CantidadJuegos}" Width="87"  Margin="30,0,0,0"/>
+                    <TextBox x:Name="CantidadTextBox" Width="74" Margin="60,0,0,0" Text="{Binding Cantidad}"  />
+                    
 
-                    <Button Name="AgregarButton" Width="88" Height="23" Margin="60,0,5,0" Click="AgregarButton_Click"  >
+                    <Button Name="AgregarButton" Width="88" Height="23" Margin="30,0,5,0" Click="AgregarButton_Click"  >
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Resources/agregar.png" />
                             <Label Content="Agregar" Margin="4,0" Padding="-1"/>
@@ -75,7 +77,7 @@
                 <DataGrid x:Name="DetalleDataGrid" AlternatingRowBackground="#FFBAE3FF" AutoGenerateColumns="False" ItemsSource="{Binding PrestamoDetalle}" Margin="0,5,0,0" Width="776"  Height="203">
 
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Juegos Id"  Binding="{Binding JuegosId}"/>
+                        <DataGridTextColumn Header="Juegos Id"  Binding="{Binding JuegoId}"/>
                         <DataGridTextColumn Header="Descripcion"  Binding="{Binding Descripcion}"/>
                         <DataGridTextColumn Header="Cantidad"  Binding="{Binding Cantidad}"/>
                     </DataGrid.Columns>

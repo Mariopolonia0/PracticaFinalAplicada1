@@ -65,7 +65,6 @@ namespace PracticaFinal.BLL
 
             try
             {
-
                 contexto.Entry(juegos).State = EntityState.Modified;
                 key = contexto.SaveChanges() > 0;
             }
