@@ -54,9 +54,23 @@
                         <MenuItem.Icon>
                             <Image Source="/Resources/Consulta.png" />
                         </MenuItem.Icon>
-                        
                     </MenuItem>
 
+                    <MenuItem x:Name="cEntradasMenuItem" Header="Amigos" Click="cAmigosMenuItem_Click"  >
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/Consulta.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="cJuegosMenuItem" Header="Amigos" Click="cAmigosMenuItem_Click"  >
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/Consulta.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="cPrestamosMenuItem" Header="Amigos" Click="cAmigosMenuItem_Click"  >
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/Consulta.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
 
             </Menu>
