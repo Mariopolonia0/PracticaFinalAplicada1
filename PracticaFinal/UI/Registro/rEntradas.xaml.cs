@@ -28,6 +28,9 @@ namespace PracticaFinal.UI
             EntradaIdTextBox.Text = "0";
             this.entrada.EntradaId = 1;
             entrada.Fecha = DateTime.Now;
+            JuegoIdComboBox.ItemsSource = JuegosBLL.GetJuegos();
+            JuegoIdComboBox.SelectedValuePath = "JuegoId";
+            JuegoIdComboBox.DisplayMemberPath = "JuegoId";
         }
 
         private void Limpiar()
@@ -52,56 +55,16 @@ namespace PracticaFinal.UI
                 GuardarButton.IsEnabled = true;
             }
 
-            if (JuegoIdTextBox.Text.Length == 0 | Convert.ToInt32(JuegoIdTextBox.Text) == 0)
+            if (JuegoIdComboBox.SelectedItem == null )
             {
                 esValido = false;
                 GuardarButton.IsEnabled = false;
                 MessageBox.Show("Descripcion está vacio", "Fallo",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
-                JuegoIdTextBox.Focus();
+                JuegoIdComboBox.Focus();
                 GuardarButton.IsEnabled = true;
             }
-            /*
-            if (DireccionTextBox.Text.Length == 0)
-            {
-                esValido = false;
-                GuardarButton.IsEnabled = false;
-                MessageBox.Show("Precio está vacio", "Fallo",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
-                DireccionTextBox.Focus();
-                GuardarButton.IsEnabled = true;
-            }
-
-            if (CelularTextBox.Text.Length == 0)
-            {
-                esValido = false;
-                GuardarButton.IsEnabled = false;
-                MessageBox.Show("UsuarioId está vacia", "Fallo",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
-                CelularTextBox.Focus();
-                GuardarButton.IsEnabled = true;
-            }
-
-            if (EmailTextBox.Text.Length == 0)
-            {
-                esValido = false;
-                GuardarButton.IsEnabled = false;
-                MessageBox.Show("ITBIS está vacia", "Fallo",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
-                EmailTextBox.Focus();
-                GuardarButton.IsEnabled = true;
-            }
-
-            if (FechaDatePicker.Text.Length == 0)
-            {
-                esValido = false;
-                GuardarButton.IsEnabled = false;
-                MessageBox.Show("Fecha está vacia", "Fallo",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
-                FechaDatePicker.Focus();
-                GuardarButton.IsEnabled = true;
-            }
-            */
+           
             return esValido;
         }
 
@@ -147,9 +110,6 @@ namespace PracticaFinal.UI
             if (!Validar())
                 return;
 
-            Juegos juegos = JuegosBLL.Buscar(Convert.ToInt32(JuegoIdTextBox.Text)); ;
-            juegos.Existencia += entrada.Cantidad;
-            JuegosBLL.Modificar(juegos);
 
             var paso = EntradasBLL.Guardar(entrada);
 
@@ -162,6 +122,21 @@ namespace PracticaFinal.UI
             else
                 MessageBox.Show("Transacción Fallida", "Fallo",
                     MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+        private void JuegoIdComboBox_DropDownClosed(object sender, EventArgs e)
+        {
+            Juegos juego = JuegosBLL.Buscar(Convert.ToInt32(JuegoIdComboBox.SelectedValue));
+            if (juego == null)
+                return;
+
+            DescripcionLabel.Content = juego.Descripcion;
+        }
+
+        private void EntradaIdTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            Utilidades.ValidarSoloNumeros(e);
+            //JuegoIdTextBox.Text = e.Key.ToString();
         }
     }
 }

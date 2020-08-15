@@ -42,6 +42,13 @@ namespace PracticaFinal.BLL
 
             try
             {
+                foreach (var item in prestamo.PrestamoDetalle)
+                {
+                    Juegos juegos = JuegosBLL.Buscar(item.JuegoId);
+                    juegos.Existencia -= item.Cantidad;
+                    JuegosBLL.Modificar(juegos);
+                }
+
                 contexto.Prestamos.Add(prestamo);
                 key = contexto.SaveChanges() > 0;
             }
@@ -65,6 +72,12 @@ namespace PracticaFinal.BLL
 
             try
             {
+                foreach (var item in prestamo.PrestamoDetalle)
+                {
+                    Juegos juegos = JuegosBLL.Buscar(item.JuegoId);
+                    juegos.Existencia -= item.Cantidad;
+                    JuegosBLL.Modificar(juegos);
+                }
 
                 contexto.Entry(prestamo).State = EntityState.Modified;
                 key = contexto.SaveChanges() > 0;

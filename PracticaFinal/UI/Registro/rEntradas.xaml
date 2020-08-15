@@ -1,19 +1,17 @@
-﻿<Window x:Class="PracticaFinal.UI.rJuegos"
+﻿<Window x:Class="PracticaFinal.UI.rEntradas"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PracticaFinal.UI"
         mc:Ignorable="d"
-        Title="rJuegos" Height="400" Width="334">
+        Icon="/resources/Registro.png"
+        Title="Registro Entradas" FontSize="15" Height="364" Width="375">
     <StackPanel Orientation="Vertical" Margin="4,0,04,0">
 
-        <StackPanel Orientation="Vertical">
-            <Label Content="Juego Id"/>
+            <Label Content="Entrada Id"/>
             <StackPanel Orientation="Horizontal">
-
-                <TextBox x:Name="JuegoIdTextBox" Text="{Binding JuegoId}" Width="100" />
-                
+                <TextBox x:Name="EntradaIdTextBox" Text="{Binding EntradaId}" Width="100" KeyDown="EntradaIdTextBox_KeyDown" />
                 <Button x:Name="BuscarButton" Margin="6,0" Click="BuscarButton_Click"  >
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Resources/Buscar.png" Height="20"/>
@@ -22,30 +20,33 @@
                 </Button>
             </StackPanel>
 
-            <Label Content="Fecha Compra"/>
-            <DatePicker x:Name="FechaDatePicker" Text="{Binding Fecha}" Height="31"/>
-
-            <Label Content="Descripcion"/>
-            <TextBox x:Name="DescripcionTextBox" Text="{Binding Descripcion}" Height="27"/>
-
-            <Label Content="Precio"/>
-            <TextBox x:Name="PrecioTextBox" Text="{Binding Precio}" Height="27"/>
-
-            <Label Content="Existencia"/>
-            <Label x:Name="ExistenciaTextBox" Content="{Binding Existencia}" Height="27"/>
-
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Juego Id"/>
+            <Label Content="Descripcion" Margin="50,0,0,0"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Width="271" Height="40" Margin="0,20,0,0" >
+        <StackPanel Orientation="Horizontal">
+            <ComboBox x:Name="JuegoIdComboBox" Text="{Binding JuegoId}" Height="28" Width="72" DropDownClosed="JuegoIdComboBox_DropDownClosed" />
+            <Label x:Name="DescripcionLabel" Content="{Binding Descripcion}"  Margin="50,0,0,0" Width="245" />
+        </StackPanel>
+           
 
-            <Button x:Name="NuevoButton" Click="NuevoButton_Click"  >
+            <Label Content="Fecha"/>
+            <DatePicker x:Name="FechaDatePicker" Text="{Binding Fecha}" Height="31"/>
+
+            <Label Content="Cantidad"/>
+            <TextBox x:Name="CantidadTextBox" Text="{Binding Cantidad}" Height="27"/>
+
+        <StackPanel Orientation="Horizontal" Width="291" Height="40" Margin="0,20,0,0" >
+
+            <Button x:Name="NuevoButton" Click="NuevoButton_Click_1"  >
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Resources/Nuevo.png" Height="20"/>
                     <Label Content="Nuevo"/>
                 </StackPanel>
             </Button>
 
-            <Button x:Name="GuardarButton" Margin="15,0" Click="GuardarButton_Click" >
+            <Button x:Name="GuardarButton" Margin="15,0" Click="GuardarButton_Click_1" >
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Resources/Guardar.png" Height="20"/>
                     <Label Content="Guardar"/>

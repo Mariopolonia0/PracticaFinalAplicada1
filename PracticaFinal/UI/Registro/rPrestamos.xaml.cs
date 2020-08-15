@@ -87,7 +87,7 @@ namespace PracticaFinal.UI
             {
                 esValido = false;
                 GuardarButton.IsEnabled = false;
-                MessageBox.Show("Observacion está vacio", "Fallo",
+                MessageBox.Show("Cantidad está vacio", "Fallo",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
                 CantidadTextBox.Focus();
                 GuardarButton.IsEnabled = true;
@@ -101,9 +101,7 @@ namespace PracticaFinal.UI
 
             if (!Validar())
                 return;
-
-
-            PrestamosBLL.ModificarDetalle(prestamo);
+ 
             var paso = PrestamosBLL.Guardar(prestamo);
 
             if (paso)

@@ -1,4 +1,5 @@
 ﻿using PracticaFinal.UI;
+using PracticaFinal.UI.Consultas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,6 +49,12 @@ namespace PracticaFinal
         {
             rPrestamos prestamos = new rPrestamos();
             prestamos.Show();
+        }
+
+        private void cAmigosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            cAmigos camigo = new cAmigos();
+            camigo.Show();
         }
     }
 }

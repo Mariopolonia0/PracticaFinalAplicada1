@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PracticaFinal"
         mc:Ignorable="d"
-        Title="MainWindow" Height="258" Width="357">
+        Icon="/resources/Programa.png"
+        Title="Ventana Principal" Height="258" Width="357">
     <Grid>
 
         <StackPanel >
@@ -13,30 +14,30 @@
                 <MenuItem  Header="   Registros" Width="94"    >
 
                     <MenuItem.Icon>
-                        <Image Source="/Resources/Nuevo.png" Margin="-4,-15,-14,-15"/>
+                        <Image Source="/Resources/Registro.png" Margin="-4,-15,-14,-15"/>
                     </MenuItem.Icon>
 
                     <MenuItem x:Name="rAmigosMenuItem" Header="Amigos" Click="rAmigosMenuItem_Click" >
                         <MenuItem.Icon>
-                            <Image Source="/Resources/Nuevo.png" />
+                            <Image Source="/Resources/Registro.png" />
                         </MenuItem.Icon>
                     </MenuItem>
 
                     <MenuItem x:Name="rEntradaMenuItem" Header="Entrada" Click="rEntradaMenuItem_Click"  >
                         <MenuItem.Icon>
-                            <Image Source="/Resources/Nuevo.png" />
+                            <Image Source="/Resources/Registro.png" />
                         </MenuItem.Icon>
                     </MenuItem>
 
                     <MenuItem x:Name="rJuegosMenuItem" Header="Juegos" Click="rJuegosMenuItem_Click"   >
                         <MenuItem.Icon>
-                            <Image Source="/Resources/Nuevo.png" />
+                            <Image Source="/Resources/Registro.png" />
                         </MenuItem.Icon>
                     </MenuItem>
 
-                    <MenuItem x:Name="rPrestamoMenuItem" Header="Prestamo" Click="rPrestamoMenuItem_Click"   >
+                    <MenuItem x:Name="rPrestamoMenuItem" Header="Prestamo" Click="rPrestamoMenuItem_Click" >
                         <MenuItem.Icon>
-                            <Image Source="/Resources/Nuevo.png" />
+                            <Image Source="/Resources/Registro.png" />
                         </MenuItem.Icon>
                     </MenuItem>
 
@@ -46,13 +47,21 @@
                 <MenuItem Header="   Consultas"  Height="46" Width="92"  >
 
                     <MenuItem.Icon>
-                        <Image Source="/Resources/Nuevo.png"  Margin="-4,-15,-14,-15"/>
+                        <Image Source="/Resources/Consulta.png"  Margin="-4,-15,-14,-15"/>
                     </MenuItem.Icon>
+
+                    <MenuItem x:Name="cAmigosMenuItem" Header="Amigos" Click="cAmigosMenuItem_Click"  >
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/Consulta.png" />
+                        </MenuItem.Icon>
+                        
+                    </MenuItem>
 
                 </MenuItem>
 
             </Menu>
 
+            <Image Source="/Resources/Fondo.jfif"/>
         </StackPanel>
 
     </Grid>

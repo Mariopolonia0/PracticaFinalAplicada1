@@ -9,8 +9,8 @@ using PracticaFinal.DAL;
 namespace PracticaFinal.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200814004950_primera migration")]
-    partial class primeramigration
+    [Migration("20200815021455_primera migracion")]
+    partial class primeramigracion
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

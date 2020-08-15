@@ -42,6 +42,9 @@ namespace PracticaFinal.BLL
 
             try
             {
+                Juegos juegos = JuegosBLL.Buscar(Convert.ToInt32(Entrada.JuegoId)); ;
+                juegos.Existencia += Entrada.Cantidad;
+                JuegosBLL.Modificar(juegos);
                 contexto.Entradas.Add(Entrada);
                 key = contexto.SaveChanges() > 0;
             }
@@ -65,6 +68,9 @@ namespace PracticaFinal.BLL
 
             try
             {
+                Juegos juegos = JuegosBLL.Buscar(Convert.ToInt32(Entrada.JuegoId)); ;
+                juegos.Existencia += Entrada.Cantidad;
+                JuegosBLL.Modificar(juegos);
 
                 contexto.Entry(Entrada).State = EntityState.Modified;
                 key = contexto.SaveChanges() > 0;
@@ -165,5 +171,7 @@ namespace PracticaFinal.BLL
             }
             return lista;
         }
+
+
     }
 }

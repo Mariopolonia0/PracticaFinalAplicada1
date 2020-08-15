@@ -11,8 +11,12 @@
     <None Remove="Resources\agregar.png" />
     <None Remove="Resources\Buscar.png" />
     <None Remove="Resources\Cancelar.jfif" />
+    <None Remove="Resources\Consulta.png" />
+    <None Remove="Resources\Fondo.jfif" />
     <None Remove="Resources\Guardar.png" />
     <None Remove="Resources\Nuevo.png" />
+    <None Remove="Resources\Programa.png" />
+    <None Remove="Resources\Registro.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +25,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="OpenTK" Version="3.2.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,10 +38,22 @@
     <Resource Include="Resources\Cancelar.jfif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Consulta.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fondo.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Guardar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Nuevo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Programa.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Registro.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
